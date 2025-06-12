@@ -2,59 +2,50 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Freundschafts Test</title>
+  <title>Flashbang Ralf</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
       background-color: #1e1e1e;
-      color: #ffffff;
+      color: white;
+      font-family: sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      transition: all 0.2s ease-in-out;
+      transition: 0.2s ease-in-out;
     }
 
     button {
-      padding: 1em 2em;
-      font-size: 1.2em;
-      background-color: #4caf50;
-      color: white;
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
       border: none;
       border-radius: 8px;
+      background: limegreen;
+      color: black;
       cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    button:hover {
-      background-color: #388e3c;
     }
 
     .flashbang {
-      background-color: white !important;
+      background: white !important;
       color: black !important;
     }
   </style>
 </head>
 <body>
-  <h1>Drück den Button 👇</h1>
-  <button onclick="flashbang()">Mach Boom</button>
-
-  <audio id="boom" src="https://www.myinstants.com/media/sounds/ralf.mp3"></audio>
+  <h1>Bist du bereit? 😈</h1>
+  <button onclick="flashbang()">Klick Mich</button>
 
   <script>
     function flashbang() {
       document.body.classList.add("flashbang");
 
-      const audio = document.getElementById("boom");
-      audio.volume = 1.0;
-      audio.play();
+      // Direktlink zur MP3, nicht zur Website
+      const sound = new Audio("https://www.myinstants.com/media/sounds/ralf.mp3");
+      sound.volume = 1.0;
+      sound.play();
 
-      // Optional: Bildschirm blinken lassen
+      // Bildschirm blinken lassen
       setInterval(() => {
         document.body.style.backgroundColor =
           document.body.style.backgroundColor === "white" ? "#ff0000" : "white";
